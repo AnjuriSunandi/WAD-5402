@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<style type="text/css">
+		table{
+			padding-top: 240px;
+		}
+	</style>
+	<script type="text/javascript">
+		function Fact(){
+			var x = Number(document.getElementById("num").value)
+			if(x == 0 || x == 1){
+				document.getElementById("num").value = x
+			}
+			else{
+				var fac = 1
+				for(let i = 1;i<=x;i++){
+						fac *= i
+				}
+				document.getElementById("num").value = fac
+			}
+		}
+		function Fib(){
+			var x = Number(document.getElementById("num").value)
+			if(x == 0 || x == 1){
+				document.getElementById("num").value = x
+			}
+			else if(x == 2){
+				document.getElementById("num").value = x
+			}
+			else{
+				var a = 0,b = 1,c = a+b
+				for(let i = 3;i<=x;i++){
+					c = a+b	
+					a = b
+					b = c
+				}
+				document.getElementById("num").value = c
+			}
+		}
+		/*function Prime(){
+			var x = Number(document.getElementById("num").value)
+			var count = 0
+			for(let i = 2;i <= x;i++){
+				let cnt = 0
+				for(let j = 2;j <= i;j++){
+					if(i%j == 0){
+						cnt = cnt + 1
+					}
+				}
+				if(cnt == 0){
+					count = count + 1
+				}
+
+			}
+			document.getElementById("num").value = count
+		}*/
+		/*function Palindrome(){
+			var x = document.getElementById("num").value
+			var reverse = x.split('').reverse.join('')
+			if(x === reverse){
+				document.getElementById("num").value = "It's a palindrome"
+			}else{
+			document.getElementById("num").value = "It's not a palindrome"
+			}
+		}*/
+		function aClear(res){
+				document.getElementById("num").value = " "
+		}
+	</script>
+</head>
+<body>
+	<form>
+		<table align = 'center'>
+			<tr>
+				<td colspan="2"><input type = "text" placeholder = "number" id = "num" style = "height : 30px;width : 200px"></td> 
+			</tr>
+			<tr>
+				<td align = "center"><input type = "button" name = "fact" value= "Factorial" id = "fact" onclick = "Fact()"></td>&nbsp; 
+				<td align = "center"><input type = "button" name = "fib" value= "Fibonnaci" id = "fib" onclick = "Fib()"></td> 
+			</tr>
+			<tr>
+				<td align = "center"></td>
+				<td align = "center"></td> 
+			</tr>
+			<tr>
+			<td colspan = "4" align = "center"><input type = "button" class = "TEXT" value = "All Clear" name = 'AC' onclick = "aClear()"></td>
+		</tr>
+		</table>
+	</form>
+
+</body>
+</html>
